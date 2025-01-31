@@ -26,6 +26,10 @@ import StatusBarPage from './pages/StatusBar';
 import Preferences from './pages/Preferences';
 import TextZoom from './pages/TextZoom';
 import ToastPage from './pages/Toast';
+//@ts-ignore
+import * as BrazePlugin from 'braze-cordova-sdk';　
+
+BrazePlugin.changeUser('cap-user-routes.tsx');
 
 interface Page {
   readonly url: string;

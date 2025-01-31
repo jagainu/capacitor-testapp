@@ -34,7 +34,7 @@ dependencies {
     implementation project(':capacitor-toast')
 
 }
-
+apply from: "../../node_modules/braze-cordova-sdk/src/android/build-extras.gradle"
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()

@@ -20,6 +20,9 @@ import {
 import { App, AppState } from '@capacitor/app';
 import { AppLauncher } from '@capacitor/app-launcher';
 
+// @ts-ignore
+import * as BrazePlugin from 'braze-cordova-sdk';
+
 const AppPage: React.FC = () => {
   const [appInfoJson, setAppInfoJson] = useState('');
   let stateChangeHandler: PluginListenerHandle;
@@ -33,6 +36,7 @@ const AppPage: React.FC = () => {
 
     getLaunchUrl();
   });
+  
 
   const setListeners = async () => {
     stateChangeHandler = await App.addListener(
@@ -118,6 +122,14 @@ const AppPage: React.FC = () => {
     await AppLauncher.openUrl({ url: '' });
   };
 
+  const brazeChangeUser = async () => {
+    await BrazePlugin.changeUser('capuser2');
+  };
+  
+  const brazeContentsCard = async () => {
+    await BrazePlugin.launchContentCards();
+  };
+
   useIonViewDidLeave(() => {
     stateChangeHandler.remove();
     urlOpenHandler.remove();
@@ -160,6 +172,13 @@ const AppPage: React.FC = () => {
         <IonButton expand="block" onClick={failCall}>
           Test Failing Call
         </IonButton>
+        <IonButton expand="block" onClick={brazeChangeUser}>
+          Braze Change User
+        </IonButton>
+        <IonButton expand="block" onClick={brazeContentsCard}>
+          Show Contents Card
+        </IonButton>
+        
         <p>
           <a href="tel:212-549-2543">Telephone Test</a>
           <a href="mailto:name@email.com">Email Test</a>

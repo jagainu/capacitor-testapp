@@ -2,5 +2,15 @@
 <widget version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <access origin="*" />
   
+  <feature name="BrazePlugin">
+    <param name="ios-package" value="BrazePlugin"/>
+    <param name="onload" value="true"/>
+  </feature>
+
   
+  <preference name="com.braze.api_key" value="93de8e84-8b9a-48ba-bc66-0f3545350723" />
+  <preference name="com.braze.ios_api_endpoint" value="sondheim.braze.com" />
+  <preference name="com.braze.android_api_endpoint" value="sondheim.braze.com" />
+  <preference name="com.braze.ios_log_level" value="2" />
+  <preference name="com.braze.ios_disable_automatic_push_registration" value="YES" />
 </widget>

@@ -59,6 +59,7 @@
     "@types/node": "^18.0.0",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
+    "braze-cordova-sdk": "github:braze-inc/braze-cordova-sdk#master",
     "classnames": "^2.2.6",
     "formik": "^2.2.6",
     "ionicons": "^7.0.0",

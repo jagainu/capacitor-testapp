@@ -4,6 +4,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
+// @ts-ignore
+import * as BrazePlugin from 'braze-cordova-sdk';
+
+document.addEventListener('deviceready', () => {
+BrazePlugin.changeUser('capuser1');
+});
+
 // enable PWA elements
 defineCustomElements(window);
 

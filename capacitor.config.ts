@@ -5,8 +5,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.capacitorjs.app.testapp',
-  appName: 'capacitor-testapp',
+  appId: 'pro.makbook.mtcapacitortest',
+  appName: 'MTCapacitorTest',
   webDir: 'dist',
   plugins: {
     CapacitorCookies: {
@@ -26,6 +26,18 @@ const config: CapacitorConfig = {
       presentationOptions: ["alert", "sound"]
     }
   },
+  cordova: {
+    preferences: {
+      'com.braze.api_key': '93de8e84-8b9a-48ba-bc66-0f3545350723',
+      'com.braze.ios_api_endpoint': 'sondheim.braze.com',
+      'com.braze.android_api_endpoint': 'sondheim.braze.com',
+      'com.braze.ios_log_level': '2',
+      'com.braze.ios_disable_automatic_push_registration': 'YES',      
+    },
+    staticPlugins: [
+      "cordova-plugin-braze"
+    ]
+  }
 };
 
 export default config;
